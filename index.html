@@ -4,90 +4,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagramas del proyecto</title>
+    <meta name="description"
+        content="Explora los diagramas del proyecto de María Fernanda Obregón Ramírez: idea general, clientes, ingresos y casos de uso.">
+    <title>Diagramas del proyecto | María Fernanda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
-            font-family: Arial, sans-serif;
-            color: #25233b;
-            background: linear-gradient(135deg, #eef2ff, #f5eaff);
+            background: #fafafa;
+            color: #27212a;
+            font-family: "Poppins", Arial, sans-serif;
         }
 
-        main {
+        .about-section {
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            padding: 90px 7%;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 83% 51%, #f8e6ed 0, transparent 48%);
+        }
+
+        .about-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
             width: 100%;
-            max-width: 480px;
-            padding: 40px 28px;
-            text-align: center;
-            background: #ffffff;
-            border: 1px solid #eeeaf7;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px #40307015;
+            max-width: 1140px;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 0;
+            max-width: 560px;
         }
 
         .etiqueta {
             display: inline-block;
-            padding: 8px 14px;
-            border-radius: 20px;
-            background: #f0ebff;
-            color: #6d45c2;
-            font-size: 12px;
-            font-weight: bold;
+            margin-bottom: 22px;
+            padding: 8px 15px;
+            border: 1px solid #ebd4dd;
+            border-radius: 30px;
+            background: #fff9fb;
+            color: #92506a;
+            font-family: "Quicksand", Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
         h1 {
-            margin: 20px 0 12px;
-            font-size: clamp(26px, 5vw, 34px);
+            margin-bottom: 20px;
+            font-family: "Quicksand", Arial, sans-serif;
+            font-size: clamp(40px, 4.7vw, 64px);
+            font-weight: 600;
+            line-height: 1.08;
+            letter-spacing: -2px;
         }
 
-        p {
-            margin: 0 0 30px;
-            color: #716c83;
-            line-height: 1.6;
+        h1 span {
+            display: block;
+            color: #b76182;
+        }
+
+        .introduccion {
+            max-width: 440px;
+            margin-bottom: 30px;
+            color: #6e6269;
+            font-size: 15px;
+            line-height: 1.8;
         }
 
         nav {
             display: grid;
-            gap: 14px;
+            gap: 12px;
         }
 
         nav a {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 16px;
-            padding: 18px 20px;
-            border: 1px solid #e5def5;
-            border-radius: 14px;
-            background: #faf8ff;
-            color: #533594;
+            min-height: 70px;
+            padding: 16px 20px;
+            border: 1px solid #e8d6df;
+            border-radius: 16px;
+            background: #ffffffed;
+            color: #644053;
             text-decoration: none;
-            font-weight: bold;
-            text-align: left;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
+            font-family: "Quicksand", Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .numero {
+            flex: 0 0 auto;
+            color: #95617a;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .flecha {
+            margin-left: auto;
+            font-size: 24px;
+            font-weight: 500;
         }
 
         nav a:hover {
-            background: #7047c6;
-            color: #ffffff;
             transform: translateY(-3px);
+            border-color: #99506f;
+            background: #99506f;
+            color: #ffffff;
+            box-shadow: 0 8px 24px #99506f20;
+        }
+
+        nav a:hover .numero {
+            color: #ffffff;
         }
 
         nav a:focus-visible {
-            outline: 3px solid #7047c6;
+            outline: 3px solid #99506f;
             outline-offset: 4px;
         }
 
+        .main-image {
+            flex: 0 0 400px;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .main-image-circle {
+            position: relative;
+            width: 400px;
+            max-width: 100%;
+            aspect-ratio: 1;
+            margin: 0 auto 28px;
+            border-radius: 50%;
+            background: #f2e4eb;
+            box-shadow: 0 0 0 12px #ffffffb8, 0 24px 65px #70485820;
+        }
+
+        .main-image-circle::before {
+            content: "";
+            position: absolute;
+            inset: -26px;
+            border: 1px solid #dfbdcd;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .main-image-circle img {
+            display: block;
+            width: 400px;
+            height: 400px;
+            max-width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+
+        figcaption {
+            padding-top: 13px;
+            font-family: "Quicksand", Arial, sans-serif;
+        }
+
+        .nombre {
+            display: block;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .apellido {
+            display: block;
+            margin-top: 3px;
+            color: #795d6d;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .image-bubbles {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            animation: floating 8s ease-in-out infinite;
+        }
+
+        .bubble img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .bubble-1 {
+            width: 230px;
+            height: 230px;
+            top: -90px;
+            left: 28%;
+            opacity: 0.65;
+        }
+
+        .bubble-2 {
+            width: 100px;
+            height: 100px;
+            top: 8%;
+            left: 1%;
+            opacity: 0.6;
+            animation-delay: -2s;
+        }
+
+        .bubble-3 {
+            width: 150px;
+            height: 150px;
+            top: 1%;
+            right: 2%;
+            opacity: 0.65;
+            animation-delay: -3s;
+        }
+
+        .bubble-4 {
+            width: 150px;
+            height: 190px;
+            bottom: -75px;
+            left: -20px;
+            opacity: 0.5;
+            animation-delay: -1s;
+        }
+
+        .bubble-5 {
+            width: 80px;
+            height: 80px;
+            bottom: 3%;
+            left: 40%;
+            opacity: 0.55;
+            animation-delay: -4s;
+        }
+
+        .bubble-6 {
+            width: 135px;
+            height: 135px;
+            bottom: 1%;
+            right: 1%;
+            opacity: 0.6;
+            animation-delay: -2s;
+        }
+
+        .bubble-7 {
+            width: 65px;
+            height: 65px;
+            top: 53%;
+            left: -25px;
+            opacity: 0.55;
+            animation-delay: -1s;
+        }
+
+        .bubble-8 {
+            width: 90px;
+            height: 100px;
+            top: 5%;
+            right: 31%;
+            opacity: 0.45;
+            animation-delay: -5s;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(2deg);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .about-section {
+                padding: 80px 6%;
+            }
+
+            .about-container {
+                gap: 50px;
+            }
+
+            .main-image {
+                flex-basis: 340px;
+                width: 340px;
+            }
+
+            .main-image-circle img {
+                height: auto;
+                aspect-ratio: 1;
+            }
+
+            h1 {
+                font-size: 47px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .about-section {
+                padding: 65px 28px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                gap: 65px;
+            }
+
+            .about-content {
+                width: 100%;
+                max-width: 520px;
+                text-align: center;
+            }
+
+            .introduccion {
+                margin: 0 auto 28px;
+            }
+
+            nav a {
+                text-align: left;
+            }
+
+            .main-image {
+                flex-basis: auto;
+                width: 400px;
+            }
+
+            .bubble-1 {
+                left: 50%;
+                top: -145px;
+            }
+
+            .bubble-3 {
+                width: 90px;
+                height: 90px;
+                right: -20px;
+                top: 22%;
+            }
+
+            .bubble-5,
+            .bubble-8 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .about-section {
+                padding: 48px 22px;
+            }
+
+            h1 {
+                font-size: 42px;
+                letter-spacing: -1.5px;
+            }
+
+            .introduccion {
+                font-size: 14px;
+            }
+
+            nav a {
+                padding: 15px;
+                gap: 12px;
+                font-size: 15px;
+            }
+
+            .main-image {
+                width: calc(100% - 32px);
+            }
+
+            .main-image-circle::before {
+                inset: -20px;
+            }
+
+            .bubble-2 {
+                left: -35px;
+                top: 5%;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
+            .bubble {
+                animation: none;
+            }
+
             nav a {
                 transition: none;
             }
@@ -100,29 +426,61 @@
 </head>
 
 <body>
-    <main>
+    <main class="about-section">
+        <div class="image-bubbles" aria-hidden="true">
+            <div class="bubble bubble-1"><img src="Images/image.png" alt=""></div>
+            <div class="bubble bubble-2"><img src="Images/image2.png" alt=""></div>
+            <div class="bubble bubble-3"><img src="Images/image6.png" alt=""></div>
+            <div class="bubble bubble-4"><img src="Images/image5.png" alt=""></div>
+            <div class="bubble bubble-5"><img src="Images/image7.png" alt=""></div>
+            <div class="bubble bubble-6"><img src="Images/image4.png" alt=""></div>
+            <div class="bubble bubble-7"><img src="Images/image9.png" alt=""></div>
+            <div class="bubble bubble-8"><img src="Images/image8.png" alt=""></div>
+        </div>
 
-        <h1>Explora los diagramas</h1>
-        <p>Selecciona un diagrama para conocer cada parte del proyecto.</p>
+        <div class="about-container">
+            <section class="about-content" aria-labelledby="titulo">
+                <span class="etiqueta">MI PROYECTO</span>
+                <h1 id="titulo">Explora los <span>diagramas.</span></h1>
+                <p class="introduccion">Selecciona un diagrama para conocer cada parte del proyecto.</p>
 
-        <nav aria-label="Diagramas del proyecto">
-            <a href="diagramflow_idea.html">
-                Diagrama general
-                <span aria-hidden="true">→</span>
-            </a>
+                <nav aria-label="Diagramas del proyecto">
+                    <a href="diagramflow_idea.html">
+                        <span class="numero" aria-hidden="true">01</span>
+                        Diagrama general
+                        <span class="flecha" aria-hidden="true">→</span>
+                    </a>
+                    <a href="diagram_customers.html">
+                        <span class="numero" aria-hidden="true">02</span>
+                        Adquisición de clientes
+                        <span class="flecha" aria-hidden="true">→</span>
+                    </a>
+                    <a href="diagram_bussiness_money.html">
+                        <span class="numero" aria-hidden="true">03</span>
+                        Generación de ingresos
+                        <span class="flecha" aria-hidden="true">→</span>
+                    </a>
+                    <a href="casos_de_uso.html">
+                        <span class="numero" aria-hidden="true">04</span>
+                        Actores y casos de uso
+                        <span class="flecha" aria-hidden="true">→</span>
+                    </a>
+                </nav>
+            </section>
 
-            <a href="diagram_customers.html">
-                Adquisición de clientes
-                <span aria-hidden="true">→</span>
-            </a>
-
-            <a href="diagram_bussiness_money.html">
-                Generación de ingresos
-                <span aria-hidden="true">→</span>
-            </a>
-        </nav>
+            <figure class="main-image">
+                <div class="main-image-circle">
+                    <img src="Images/my_image.jpg" alt="Foto de María Fernanda Obregón Ramírez" width="400"
+                        height="400">
+                </div>
+                <figcaption>
+                    <span class="nombre">María Fernanda</span>
+                    <span class="apellido">Obregón Ramírez</span>
+                    <span class="apellido">fernandaobregonda@gmail.com</span>
+                </figcaption>
+            </figure>
+        </div>
     </main>
 </body>
 
 </html>
-
