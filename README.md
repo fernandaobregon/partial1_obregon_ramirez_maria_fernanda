@@ -1,1 +1,3 @@
-# partial1_obregon_ramirez_maria_fernanda
+Partial 1 María Fernanda Obregón Ramírez 
+4 A BIS TI 
+EVALUATION PARTIAL I QUALITY TOPICS FOR SOFTWARE DESIGN
